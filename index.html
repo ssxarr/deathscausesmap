@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Deaths Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="controls-container">
+        <div class="control">
+            <label for="disease-selector">Select Cause:</label>
+            <select id="disease-selector">
+                <option value="">Loading...</option>
+            </select>
+        </div>
+
+        <div class="control">
+             <label for="year-slider">Year: <span id="year-display">1990</span></label>
+             <input type="range" id="year-slider" name="year" min="1990" max="2019" step="1" value="1990" style="width: 100%;">
+        </div>
+
+         <div class="control legend">
+            <div id="legend">
+                <div id="legend-title">Deaths</div>
+                <div id="legend-colors"></div>
+                <div id="legend-labels">
+                    <span id="legend-min">0</span>
+                    <span id="legend-max">Max</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    <script src="map.js"></script>
+
+</body>
+</html>
